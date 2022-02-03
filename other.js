@@ -231,3 +231,30 @@ const countAnimalsRe = countAnimals(21);
 console.log(countAnimalsRe);
 
 
+
+// 18 Traboling in jongle and count total animals you show
+
+function animalsCount(miles) {
+    const afterTenMiles = 10;
+    const afterTwontyMiles = 50;
+    const lastEveryMiles = 100;
+
+    if (miles <= 10) {
+        return afterTenMiles * miles;
+    } else if (miles <= 20) {
+        const addFrist = afterTenMiles * 10;
+        const secendMile = miles - 10;
+        const secendAni = secendMile * afterTwontyMiles;
+        return addFrist + secendAni;
+
+    } else {
+        const addFrist = afterTenMiles * 10;
+        const addSecend = afterTwontyMiles * 10;
+        const lastMile = miles - 20;
+        const lastAni = lastMile * lastEveryMiles;
+        return addFrist + addSecend + lastAni;
+    }
+}
+
+const animalsResult = animalsCount(225);
+console.log(animalsResult);
