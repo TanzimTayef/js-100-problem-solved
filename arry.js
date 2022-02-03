@@ -25,3 +25,50 @@ function removeDupName(names) {
 }
 const removeDupNameRe = removeDupName(names);
 console.log(removeDupNameRe);
+
+
+
+
+// 15. Find the cheapest phone from an array of phone objects
+const phones = [
+    { name: "sumsung j7", prize: 14500, camera: 8, storage: 16 },
+    { name: "shoumi", prize: 12000, camera: 10, storage: 32 },
+    { name: "oppo", prize: 11900, camera: 11, storage: 16 },
+    { name: "vivo pro", prize: 15000, camera: 12, storage: 32 },
+    { name: "lenovo", prize: 9999, camera: 8, storage: 8 },
+    { name: "redmi", prize: 18000, camera: 13, storage: 64 },
+    { name: "ipone", prize: 45000, camera: 19, storage: 128 },
+]
+
+function ceapeastPhone(phones) {
+    let lowPrizePhone = phones[0];
+    for (const phone of phones) {
+        if (lowPrizePhone.prize < phone.prize) {
+            lowPrizePhone = phone;
+       }
+    }
+    return lowPrizePhone;
+}
+
+const ceapeastPhoneRe = ceapeastPhone(phones);
+console.log(ceapeastPhoneRe);
+
+
+// 17 shopping cart product sum
+
+const cart = [
+    { phone: "sumsung", price: 17500 },
+    { watch: "cacio", price: 2300 },
+    {leptop: "asus", price: 45000}
+]
+
+function shoppingCart(cart) {
+    let totalPrize = 0;
+    for (const product of cart) {
+        totalPrize += product.price;
+    }
+    return totalPrize;
+}
+
+const totalAmount = shoppingCart(cart);
+console.log(totalAmount);
